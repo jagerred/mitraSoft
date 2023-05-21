@@ -4,8 +4,12 @@ const postsSlice = createSlice({
 	name: 'posts',
 	initialState: {
 		posts: [],
+		loadingStatus: 'idle',
 	},
 	reducers: {
+		changeLoadingStatus: (state, action) => {
+			state.loadingStatus = action.payload;
+		},
 		getPostsSuccess: (state, action) => {
 			state.posts = action.payload;
 		},
@@ -22,6 +26,7 @@ export const getPosts = createAction(GET_POSTS);
 export const GET_COMMENTS = 'posts/getComments';
 export const getComments = createAction(GET_COMMENTS);
 
-export const { getPostsSuccess, getCommentsSuccess } = postsSlice.actions;
+export const { getPostsSuccess, getCommentsSuccess, changeLoadingStatus } =
+	postsSlice.actions;
 
 export default postsSlice.reducer;
