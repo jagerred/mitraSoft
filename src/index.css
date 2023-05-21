@@ -28,3 +28,16 @@ html {
 	width: 100%;
 	height: 30vh;
 }
+.myInfo {
+	display: flex;
+	flex-direction: column;
+	border-top: 2px solid rgb(168, 168, 168);
+}
+.myInfoAvatar {
+	height: 40px;
+	margin: 0 auto;
+	display: block;
+	background-color: #525252;
+	border-radius: 100%;
+	padding: 0.5rem;
+}

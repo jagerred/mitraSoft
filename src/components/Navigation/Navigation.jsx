@@ -1,6 +1,7 @@
 import { Container, Dropdown, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import BurgerIcon from '../BurgerIcon/BurgerIcon';
+import AvatarIcon from '../Avatar/Avatar';
 
 const Navigation = () => (
 	<Navbar bg='primary' variant='dark' className='mb-2'>
@@ -11,11 +12,16 @@ const Navigation = () => (
 				</Dropdown.Toggle>
 				<Dropdown.Menu>
 					<Dropdown.Item as={Link} to='/'>
-						Посты
+						Список постов
 					</Dropdown.Item>
 					<Dropdown.Item as={Link} to='/about'>
-						О себе
+						Обо мне
 					</Dropdown.Item>
+					<Container className='myInfo fw-semibold pt-2'>
+						<AvatarIcon className='myInfoAvatar' />
+						<span>Владислав Грицавка</span>
+						<span>v.gritsavka@gmail.com</span>
+					</Container>
 				</Dropdown.Menu>
 			</Dropdown>
 		</Container>
