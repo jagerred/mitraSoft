@@ -4,6 +4,7 @@ import Post from '../Post/Post';
 
 const Posts = () => {
 	const { posts } = useSelector(state => state.posts);
+
 	const renderPosts = posts.map(({ userId, body, id, title }) => (
 		<Post key={id} userId={userId} body={body} id={id} title={title} />
 	));

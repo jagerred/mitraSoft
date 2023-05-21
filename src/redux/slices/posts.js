@@ -11,7 +11,6 @@ const postsSlice = createSlice({
 		},
 	},
 });
-
 export const GET_POSTS = 'posts/getPosts';
 export const getPosts = createAction(GET_POSTS);
 
