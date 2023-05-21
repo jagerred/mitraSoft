@@ -1,10 +1,9 @@
-import React from 'react';
 import { Card, Container, Spinner } from 'react-bootstrap';
 
 const Comments = ({ comments }) => {
 	const renderComments = () =>
-		comments.map(({ email, body }) => (
-			<Card>
+		comments.map(({ email, body, id }) => (
+			<Card key={id}>
 				<Card.Body>
 					<Card.Title>{email}</Card.Title>
 					<Card.Body>{body}</Card.Body>

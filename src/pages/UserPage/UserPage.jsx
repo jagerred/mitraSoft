@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 import Posts from '../../components/Posts/Posts';
@@ -12,7 +12,7 @@ const UserPage = () => {
 	const dispatch = useDispatch();
 	useEffect(() => {
 		dispatch(getPosts(userId));
-	}, []);
+	}, [dispatch, userId]);
 	const goBack = () => navigate(-1);
 	return (
 		<Container className='p-0'>
