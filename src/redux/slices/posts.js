@@ -9,11 +9,19 @@ const postsSlice = createSlice({
 		getPostsSuccess: (state, action) => {
 			state.posts = action.payload;
 		},
+		getCommentsSuccess: (state, action) => {
+			const { id, data } = action.payload;
+			const post = state.posts.find(currentPost => currentPost.id === id);
+			post.comments = data;
+		},
 	},
 });
+
 export const GET_POSTS = 'posts/getPosts';
 export const getPosts = createAction(GET_POSTS);
+export const GET_COMMENTS = 'posts/getComments';
+export const getComments = createAction(GET_COMMENTS);
 
-export const { getPostsSuccess } = postsSlice.actions;
+export const { getPostsSuccess, getCommentsSuccess } = postsSlice.actions;
 
 export default postsSlice.reducer;
